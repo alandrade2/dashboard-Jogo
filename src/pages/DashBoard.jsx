@@ -11,51 +11,42 @@ export default function Dash() {
     const [topFive, setTopFive] = useState([]);
     
     useEffect(()=> {
+    
         getDados();
-        rechargeData();
-        
-        
     }, []);
+    
     
     function rechargeData() {
         const sorted = data.sort((a,b) => {
             return b.point - a.point;
         })
         setTopFive(sorted);
-        const alphabet = data.sort((a,b) => {
+
+        const alphabet = sorted.sort((a,b) => {
             return a.name.localeCompare(b.name);
         })
 
         setData(alphabet);
-        console.log(sorted)
-        console.log(alphabet)
-        console.log(data)
     }
-
 
 
     function getDados() {
-     const NewArray = [];
-    fetch('https://cervelandia-684b8-default-rtdb.firebaseio.com/ranking.json')
-    .then(res => res.json())
-    .then(res => {
-        for(var key in res) {
-            NewArray.push({name:key, point:res[key]})
-        }
-    })
-    
-    setData(NewArray);
-
-
-
-    console.log(NewArray)
- 
+        const NewArray = [];
+       fetch('https://cervelandia-684b8-default-rtdb.firebaseio.com/ranking.json')
+       .then(res => res.json())
+       .then(res => {
+           for(var key in res) {
+               NewArray.push({name:key, point:res[key]})
+            }
+        })
+        
+        setData(NewArray);
+        rechargeData();  
+        
     }
 
+
     
-
-
-
 
   return (
     <div className="main">
@@ -65,7 +56,7 @@ export default function Dash() {
                 <MiniTable items={topFive} />
             </div>
             <div className="graf3">
-                <button onClick={() => rechargeData()} >Recarregar</button>
+                <button onClick={() => getDados()} >Recarregar</button>
                 <a href="https://jogodozumbi.netlify.app" target="_blank" rel="noopener noreferrer">Jogar</a>
             </div>        
         </div>
