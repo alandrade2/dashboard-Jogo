@@ -14,7 +14,7 @@ export default function Header() {
               <img src={imguser} alt="photouser"/> 
               <div>
                 <h2>Andre Luiz</h2>
-                <small>Super Admin</small>
+                <small>Admin</small>
               </div>
           </div>
         </header>
