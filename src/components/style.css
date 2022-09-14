@@ -25,6 +25,10 @@ header h2 {
   color: #222;
 }
 
+header h1 {
+  color: #228;
+  font-size: 2.5em;
+}
 
 
 .user-wrapper {

@@ -8,7 +8,7 @@ export default function Header() {
 <div>
         <header>
             <h1>
-                Dashboard
+                Dashboard - Jogo Zumbi
             </h1>
           <div className="user-wrapper">
               <img src={imguser} alt="photouser"/> 
