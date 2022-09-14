@@ -2,62 +2,43 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import Table from '../components/Table';
 import MiniTable from '../components/MiniTable';
-// import Data from '../data/data.js'
 
-
+import { Api } from '../services/api';
 
 export default function Dash() {
     const [data, setData] = useState([]);
-    const [topFive, setTopFive] = useState([]);
-    
-    useEffect(()=> {
-    
-        getDados();
+
+
+
+    useEffect(() => {
+        getApi();
     }, []);
-    
-    
-    function rechargeData() {
-        const sorted = data.sort((a,b) => {
-            return b.point - a.point;
-        })
-        setTopFive(sorted);
 
-        const alphabet = sorted.sort((a,b) => {
-            return a.name.localeCompare(b.name);
-        })
-
-        setData(alphabet);
+    async function getApi() {
+       const  NewArray = await Api();
+    //    console.log(NewArray);
+       setData(NewArray);
+        //  console.log(data);
     }
-
-
-    function getDados() {
-        const NewArray = [];
-       fetch('https://cervelandia-684b8-default-rtdb.firebaseio.com/ranking.json')
-       .then(res => res.json())
-       .then(res => {
-           for(var key in res) {
-               NewArray.push({name:key, point:res[key]})
-            }
-        })
-        
-        setData(NewArray);
-        rechargeData();  
-        
-    }
-
-
+ 
     
-
-  return (
+    return (
+        <>
     <div className="main">
         <div className="graf1">
             <div className="graf2">
                 <h2>Top Five</h2>
-                <MiniTable items={topFive} />
+                <MiniTable items={data} />                
             </div>
             <div className="graf3">
-                <button onClick={() => getDados()} >Recarregar</button>
-                <a href="https://jogodozumbi.netlify.app" target="_blank" rel="noopener noreferrer">Jogar</a>
+                <button onClick={() => getApi()} className="btn"><span>Atualizar</span></button>
+                <a 
+                    href="https://jogodozumbi.netlify.app" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn1">
+                        <span>Jogar</span>
+                </a>
             </div>        
         </div>
         <div className="Classif">
@@ -66,7 +47,6 @@ export default function Dash() {
         </div>
     </div>
 
-
-  )
+        </>
+    )
 }
-

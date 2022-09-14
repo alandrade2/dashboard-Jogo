@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './style.css';
 
 const Tabelas = props => {
+    const arrayItem =  props.items;
+
+    useEffect(()=> {
+        getLlinhas();
+    }, []);
 
     function getLlinhas() {
-        const arrayItem = props.items;
-        // console.log(arrayItem)
-
-        return arrayItem.map((item, i)=> {
+        const sorted = arrayItem
+        sorted.sort((a,b) => {
+            return b.point - a.point;
+        })        
+        return sorted.map((item, i)=> {
             if(i<5) {
                 return ( 
-                    <tr className ={ i % 2 === 0 ? "par" : "impar"} key={i}>
-                <td> {item.name.toUpperCase() } </td>   
-                <td className="tbright"> {item.point } pts </td>   
-            </tr>
-        )       
+            <>
+                <tr className ={ i % 2 === 0 ? "par" : "impar"} key={i}>
+                    <td> {item.name.toUpperCase() } </td>   
+                    <td className="tbright"> {item.point } pts </td>   
+                </tr>
+            </>    
+            )       
     }
-        
-    })
+    
+})
 
 }
 
@@ -31,11 +39,11 @@ return (
                         <th>Pontos</th> 
                     </tr>         
                     </thead>
-                    <tbody>
-                        {getLlinhas()}
+                    <tbody> 
+                       {getLlinhas()}
                     </tbody>
-            </table>
-        </div>
+            </table>            
+    </div>
     )
 }
 
