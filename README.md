@@ -6,3 +6,4 @@
 Proximos passos
 - Versionamento
 - desenvolvimento mobile, com instalação através de apk no android
+- entrega do trabalho no dia 23/09
