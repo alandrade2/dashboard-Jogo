@@ -27,7 +27,7 @@ return (
             <table>
                 <thead>
                     <tr>
-                        <th> Posição </th> 
+                        <th> Posiçao </th> 
                         <th>Nome</th> 
                         <th>Pontos</th> 
                     </tr>         
