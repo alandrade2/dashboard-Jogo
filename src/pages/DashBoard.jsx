@@ -43,7 +43,9 @@ export default function Dash() {
         </div>
         <div className="Classif">
             <h2>Classificação</h2>
-            <Table items={data} />
+            <div className="boxTable">
+                <Table items={data} />
+            </div>            
         </div>
     </div>
 
