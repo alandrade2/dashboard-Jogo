@@ -23,12 +23,10 @@ const Tabelas = props => {
                 </tr>
             </>    
             )       
-    }
-    
+    }   
 })
 
 }
-
 
 return (
     <div className = "tabela">

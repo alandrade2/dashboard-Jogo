@@ -16,9 +16,7 @@ export default function Dash() {
 
     async function getApi() {
        const  NewArray = await Api();
-    //    console.log(NewArray);
        setData(NewArray);
-        //  console.log(data);
     }
  
     
@@ -43,7 +41,9 @@ export default function Dash() {
         </div>
         <div className="Classif">
             <h2>Classificação</h2>
-            <Table items={data} />
+            <div className="boxTable">
+                <Table items={data} />
+            </div>            
         </div>
     </div>
 

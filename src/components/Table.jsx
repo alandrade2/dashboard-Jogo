@@ -20,14 +20,12 @@ const Tabelas = props => {
     })
 
 }
-
-
 return (
     <div className = "tabela">
             <table>
                 <thead>
                     <tr>
-                        <th> Posição </th> 
+                        <th> Posiçao </th> 
                         <th>Nome</th> 
                         <th>Pontos</th> 
                     </tr>         
