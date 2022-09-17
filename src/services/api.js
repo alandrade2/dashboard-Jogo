@@ -13,7 +13,6 @@
           for(var key in arrayItem) {
               NewArray.push({name:key.toUpperCase(), point:arrayItem[key]})
           }        
-    
           return NewArray;
       }
     

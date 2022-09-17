@@ -16,9 +16,7 @@ export default function Dash() {
 
     async function getApi() {
        const  NewArray = await Api();
-    //    console.log(NewArray);
        setData(NewArray);
-        //  console.log(data);
     }
  
     

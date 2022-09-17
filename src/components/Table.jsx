@@ -20,8 +20,6 @@ const Tabelas = props => {
     })
 
 }
-
-
 return (
     <div className = "tabela">
             <table>
