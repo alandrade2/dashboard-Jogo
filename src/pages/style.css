@@ -30,7 +30,6 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(139, 130, 117, 0.5); 
-  /* background: rgba(221, 221, 185, 0.5);     */
 }
 
 .graf2 {
@@ -151,4 +150,65 @@ border-radius: 5px;
 position: relative;
 z-index: 1;
 }
+
+
+@media only screen and (max-width: 700px) {
+
+.graf2 {
+  top: 0;
+  margin: 0;
+  height: 200px;
+  width: 100%;
+  
+}
+
+.graf1 {
+  height: 280px;
+  width: 100%;
+}
+
+
+.graf3 {
+  height: 280px;
+  width: 100%;
+}
+
+a.btn1 {
+  display: none;
+}
+
+.tabela table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.main {
+  top: 50px;
+  padding: 5px;
+  display: block;
+
+}
+
+.tabela {
+  width: 100%;
+  margin-left: 10px;
+
+}
+
+.Classif {
+  width: 100%;
+
+  overflow: hidden;
+  margin: 0;
+  padding: auto;
+
+  
+}
+
+
+
+
+}
+
 

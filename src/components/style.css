@@ -52,3 +52,30 @@ text-align: center;
 text-align: right;
 padding-right: 15px;
 }
+
+
+@media only screen and (max-width: 700px) {
+  header {
+    top: 0px;
+    justify-content: space-between;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: rgb(255, 255, 250);
+  }
+  header h2 {
+    font-size: 0.9em;
+  }
+  
+  header h1 {
+    color: #228;
+    font-size: 1em;
+  }
+
+
+  .user-wrapper  img {
+    width: 30px;
+    height: 30px;
+   }
+}
